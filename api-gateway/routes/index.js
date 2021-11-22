@@ -1,7 +1,7 @@
 
-const axios = require('axios'),
+const fs = require('fs'),
+    axios = require('axios'),
     express = require('express'),
-    fs = require('fs'),
     registry = require('./registry.json');
 
 const router = express.Router();
