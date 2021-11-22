@@ -25,28 +25,34 @@ function buildUri(apiPath) {
 }
 
 /**
- * forward all request
+ * Router method to intercept all incomming requests.
+ * If derieved address is non-existent, gateway errors out.
  */
 router.all('/:requestUri', (req, res) => {
 
     const forwardAddress = req.params.requestUri,
         derievedAddress = buildUri(forwardAddress);
 
-    if (!derievedAddress) {
+    if (!derievedAddress)
         res.status(503)
             .send("Invalid Gateway Reference.")
-    }
 
-    axios.get(derievedAddress)
+    // all crud operations friendly
+    axios({
+        method: req.method,
+        url: derievedAddress,
+        headers: req.headers,
+        data: req.body
+    })
         .then((element) => {
             res.send(element.data)
         })
         .catch(err => {
-            console.log(err)
+            res.status(500)
+                .send("Internal Server Error.")
         });
 
 })
-
 
 
 module.exports = router
