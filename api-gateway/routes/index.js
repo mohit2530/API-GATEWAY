@@ -1,6 +1,7 @@
 
 const axios = require('axios'),
     express = require('express'),
+    fs = require('fs'),
     registry = require('./registry.json');
 
 const router = express.Router();
@@ -23,6 +24,24 @@ function buildUri(apiPath) {
             return null;
     }
 }
+
+/**
+ * Register Method to register all the routes while the application starts.
+ * This data can be retrieved from a database as well, but here we are writing
+ * this to a file.
+ */
+router.post('/register', (req, res) => {
+
+    const apiInfo = req.body;
+    registry.services[apiInfo.apiName] = { ...apiInfo };
+
+    // write to the file
+    fs.writeFile('./routes/registry.json', JSON.stringify(registry), (error) => {
+        if (error) res.send("Registration failed in registry : " + apiInfo.apiName + "\n" + error)
+        res.send("Registration Completed of : " + apiInfo.apiName);
+    })
+
+})
 
 /**
  * Router method to intercept all incomming requests.
