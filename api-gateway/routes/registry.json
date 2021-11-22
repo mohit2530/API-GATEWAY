@@ -9,6 +9,11 @@
             "portEnv": "3000",
             "apiName": "/recordsApi",
             "host": "http://localhost:"
+        },
+        "/registryTest": {
+            "apiName": "/registryTest",
+            "portEnv": "3000",
+            "host": "http://localhost:"
         }
     }
 }

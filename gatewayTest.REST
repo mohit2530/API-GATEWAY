@@ -1,0 +1,14 @@
+
+GET http://localhost:9000/school/recordsApi
+
+###
+
+# POST http://localhost:9000/school/registry
+# header : Content-Type: "application/json"
+# body:
+
+# {
+#     "portEnv" : "3000",
+#     "apiName": "/registryTest",
+#     "host": "http://localhost:"
+# }
