@@ -1,0 +1,14 @@
+{
+    "services": {
+        "testApi": {
+            "portEnv": "3000",
+            "apiName": "/testApi",
+            "host": "http://localhost:"
+        },
+        "recordsApi": {
+            "portEnv": "3000",
+            "apiName": "/recordsApi",
+            "host": "http://localhost:"
+        }
+    }
+}

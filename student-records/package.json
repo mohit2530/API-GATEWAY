@@ -1,0 +1,15 @@
+{
+  "name": "student-records",
+  "version": "1.0.0",
+  "description": "Student record data",
+  "main": "index.js",
+  "scripts": {
+    "devBuild": "nodemon server.js"
+  },
+  "author": "mohit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
