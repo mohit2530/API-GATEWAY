@@ -1,19 +1,11 @@
 {
     "services": {
-        "testApi": {
-            "portEnv": "3000",
-            "apiName": "/testApi",
-            "host": "http://localhost:"
-        },
-        "recordsApi": {
-            "portEnv": "3000",
-            "apiName": "/recordsApi",
-            "host": "http://localhost:"
-        },
-        "/registryTest": {
-            "apiName": "/registryTest",
-            "portEnv": "3000",
-            "host": "http://localhost:"
-        }
+        "/records": [
+            {
+                "portEnv": "3000",
+                "apiName": "/records",
+                "host": "http://localhost:"
+            }
+        ]
     }
 }

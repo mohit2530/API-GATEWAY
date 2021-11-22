@@ -15,6 +15,7 @@
 Currently, the project is built with :
 
 1. node, express, axios. ` npm i node express axios`
+2. helmet for basic application security. `npm i helmet`
 
  ## QuickStart
 
